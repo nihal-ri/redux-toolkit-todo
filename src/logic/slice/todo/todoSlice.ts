@@ -1,14 +1,13 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { RootState } from "../store";
 
-export interface stateData {
+export interface TodoData {
   id: number;
   content: string;
   isCompleted: boolean;
 }
 
 interface Istate {
-  todos: stateData[];
+  todos: TodoData[];
 }
 
 const initialState: Istate = {
@@ -23,7 +22,7 @@ const todoSlice = createSlice({
   name: "todo",
   initialState,
   reducers: {
-    addTodo: (state, action: PayloadAction<stateData>) => {
+    addTodo: (state, action: PayloadAction<TodoData>) => {
       state.todos.push(action.payload);
     },
     markTodoDone: (state, action: PayloadAction<number>) => {
@@ -48,6 +47,3 @@ export const { addTodo, deleteTodo, markTodoDone } = todoSlice.actions;
 
 // (std.) export default for reducer
 export default todoSlice.reducer;
-
-//  Selectors
-export const getAllTodos = (state: RootState) => state.todo.todos;

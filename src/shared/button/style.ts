@@ -9,6 +9,8 @@ export const SimpleButton = styled.button`
   padding: 6px 9px;
   color: ${({ theme }) => theme.btntextColor};
   font-weight: 700;
+  border: none;
+  outline: none;
   cursor: pointer;
   &:hover {
     filter: brightness(65%);
@@ -32,4 +34,14 @@ export const SimpleButton = styled.button`
 export const DynamicButton = styled(SimpleButton)<ButtonProps>`
   background-color: ${(props) =>
     props.variant === "success" ? colors.success : "red"};
+`;
+
+export const PrimaryBtn = styled(SimpleButton)`
+  background: #3898ff;
+  border-radius: 6px;
+  padding: 12px 14px;
+  width: max-content;
+  box-shadow: none;
+  width: 100%;
+  font-size: 16px;
 `;

@@ -22,3 +22,10 @@ export const FlexSBCont = styled.div`
   justify-content: space-between;
   align-items: center;
 `;
+
+// ============================== UI =============================
+
+export const Err = styled.p`
+  color: #f44336;
+  text-align: center;
+`;
