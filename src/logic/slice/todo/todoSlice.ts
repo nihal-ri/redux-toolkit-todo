@@ -1,5 +1,4 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { RootState } from "logic/store";
 
 export interface TodoData {
   id: number;
@@ -48,6 +47,3 @@ export const { addTodo, deleteTodo, markTodoDone } = todoSlice.actions;
 
 // (std.) export default for reducer
 export default todoSlice.reducer;
-
-//  Selectors
-export const getAllTodos = (state: RootState) => state.todo.todos;
