@@ -26,6 +26,10 @@ export const ProfileCont = styled.div`
     color: #666;
     font-weight: 700;
   }
+
+  input {
+    background: transparent;
+  }
 `;
 
 export const Title = styled.h4`

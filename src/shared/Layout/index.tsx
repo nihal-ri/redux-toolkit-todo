@@ -11,7 +11,6 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
   const dispatch = useAppDispatch();
   const { user } = useAppSelector((state) => state.userData);
 
-  console.log("selector=====>", user);
   const { isDarkmode } = useAppSelector((state) => state.UI);
 
   const changeTheme = () => {
