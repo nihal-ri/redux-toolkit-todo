@@ -6,6 +6,7 @@ import { useAppDispatch, useAppSelector } from "logic/hooks";
 import { PrimaryBtn } from "shared/button/style";
 import { Err } from "shared/styles/styled";
 import { InputCont, LoginCont } from "./style";
+import "logic/immer";
 
 const Login = () => {
   const [email, setEmail] = useState("test@email.com");
