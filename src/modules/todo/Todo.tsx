@@ -2,14 +2,14 @@ import React, { useEffect, useState } from "react";
 import * as Styled from "./styles";
 
 import { useAppDispatch, useAppSelector } from "logic/hooks";
-import { FlexColCont, FlexCont } from "shared/styles/styled";
+import { FlexColCont, FlexCont, FlexSBCont } from "shared/styles/styled";
 import { DynamicButton } from "shared/button/style";
 import { addTodo, deleteTodo, markTodoDone } from "logic/slice/todo/todoSlice";
 import { useNavigate } from "react-router-dom";
 
 const Todo = () => {
   const [contentValue, setContentValue] = useState("");
-  const { todo, userData } = useAppSelector((state) => state);
+  const { todo, userData, counter } = useAppSelector((state) => state);
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
 
@@ -42,7 +42,10 @@ const Todo = () => {
 
   return (
     <Styled.AppWrapper>
-      <h1>Hello, {userData.user.name.split(" ")[0]}</h1>
+      <FlexSBCont>
+        <h1>Hello, {userData.user.name.split(" ")[0]}</h1>
+        <h1>{counter}</h1>
+      </FlexSBCont>
       <Styled.TodoCont>
         <form onSubmit={handleSubmit}>
           <FlexColCont>
