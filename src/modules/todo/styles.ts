@@ -53,6 +53,7 @@ export const MyInput = styled.input`
   outline: none;
   display: block;
   width: 97%;
+  background: rgba(255, 255, 255, 0.7);
 `;
 
 export const PositionDiv = styled.div`

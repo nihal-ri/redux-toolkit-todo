@@ -1,4 +1,5 @@
-import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { createSlice, isAnyOf, PayloadAction } from "@reduxjs/toolkit";
+import { toggleDarkMode } from "logic/actions";
 
 export interface TodoData {
   id: number;
@@ -39,6 +40,16 @@ const todoSlice = createSlice({
       );
       state.todos.splice(targetIndex, 1);
     },
+  },
+  extraReducers: (builder) => {
+    // The action ( toggleDarkMode ) is created using the createAction function of RTK
+    builder.addMatcher(isAnyOf(toggleDarkMode), (state) => {
+      state.todos.push({
+        id: new Date().getTime(),
+        content: "Hello",
+        isCompleted: false,
+      });
+    });
   },
 });
 

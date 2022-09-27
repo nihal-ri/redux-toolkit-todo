@@ -46,9 +46,9 @@ const WithImmerNextState = produce(baseState, (draftState) => {
   draftState[1].done = true;
 });
 
-console.log(baseState === WithImmerNextState);
-// false - the array was copied
-console.log(baseState[0] === WithImmerNextState[0]);
-// true - the first item was unchanged, so same reference
-console.log(baseState[1] === WithImmerNextState[1]);
-// false - the second item was copied and updated
+// console.log(baseState === WithImmerNextState);
+// // false - the array was copied
+// console.log(baseState[0] === WithImmerNextState[0]);
+// // true - the first item was unchanged, so same reference
+// console.log(baseState[1] === WithImmerNextState[1]);
+// // false - the second item was copied and updated

@@ -1,9 +1,10 @@
-import { createReducer } from "@reduxjs/toolkit";
+import { createReducer, isAnyOf } from "@reduxjs/toolkit";
 
 import { addUser, toggleDarkMode } from "logic/actions";
+import { addTodo } from "logic/slice/todo/todoSlice";
 
 // ========================================= Interfaces =========================================
-interface I_UIstates {
+export interface I_UIstates {
   isDarkmode: boolean;
 }
 
@@ -49,7 +50,15 @@ const initialUserState: I_UserStates = {
 // ========================================= Reducers =========================================
 
 export const uIReducer = createReducer(initialUIState, (builder) => {
-  builder.addCase(toggleDarkMode, (state, _action) => {
+  builder.addCase(toggleDarkMode, (state) => {
+    state.isDarkmode = !state.isDarkmode;
+  });
+
+  // The action ( addTodo ) is from Todo slice
+  builder.addMatcher(isAnyOf(addTodo), (state) => {
+    state.isDarkmode = !state.isDarkmode;
+  });
+  builder.addMatcher(isAnyOf(addUser), (state) => {
     state.isDarkmode = !state.isDarkmode;
   });
 });
