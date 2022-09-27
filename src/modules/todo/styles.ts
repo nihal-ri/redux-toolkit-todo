@@ -34,10 +34,14 @@ export const ButtonWrap = styled.div`
   width: max-content;
   margin-left: auto;
   margin-right: 60px;
+  display: grid;
+  grid-template-columns: repeat(2, max-content);
+  grid-column-gap: 10px;
 
   a {
     display: block;
     margin-top: 8px;
+    margin-left: 20px;
     text-decoration: none;
     span {
       text-transform: lowercase;

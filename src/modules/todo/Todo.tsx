@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import React, { useEffect, useState } from "react";
 import * as Styled from "./styles";
 
@@ -5,7 +6,6 @@ import { useAppDispatch, useAppSelector } from "logic/hooks";
 import { FlexColCont, FlexCont, FlexSBCont } from "shared/styles/styled";
 import { DynamicButton } from "shared/button/style";
 import { addTodo, deleteTodo, markTodoDone } from "logic/slice/todo/todoSlice";
-import { useNavigate } from "react-router-dom";
 
 const Todo = () => {
   const [contentValue, setContentValue] = useState("");

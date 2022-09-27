@@ -4,6 +4,7 @@ import { uIReducer, userDataReducer } from "./reducers";
 
 import todoReducer from "./slice/todo/todoSlice";
 import counterReducer from "./slice/counter/counterSlice";
+import { apiSlice } from "./rtk-query/apiSlice";
 
 // const logger = createLogger();
 
@@ -13,8 +14,10 @@ export const store = configureStore({
     UI: uIReducer,
     userData: userDataReducer,
     counter: counterReducer,
+    [apiSlice.reducerPath]: apiSlice.reducer,
   },
-  // middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(logger),
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware().concat(apiSlice.middleware),
 });
 
 export type AppDispatch = typeof store.dispatch;

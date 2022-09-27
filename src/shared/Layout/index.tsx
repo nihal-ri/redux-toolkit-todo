@@ -22,6 +22,9 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
       <nav>
         {user.name && (
           <ButtonWrap>
+            <PrimaryBtn as={Link} to="/posts">
+              Posts
+            </PrimaryBtn>
             <PrimaryBtn as={Link} to="/profile">
               Hello, <span>{user.name.split(" ")[0]}</span>
             </PrimaryBtn>
